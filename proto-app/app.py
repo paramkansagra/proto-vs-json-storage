@@ -17,3 +17,11 @@ file.close()
 
 # here the proto data is only taking 65 bytes of size
 # thus it is way way better in network calls
+
+
+file = open("proto_data", "rb")
+data = file.read()
+file.close()
+
+read_employee_list: employee_pb2.Employees = employee_pb2.Employees.FromString(data)
+print(read_employee_list)
